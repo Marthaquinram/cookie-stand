@@ -1,7 +1,7 @@
 'use strict'
-
+            //0         1         2           3         4         5
 let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.']
-
+let seattleSales = document.getElementById('SeattleSales');
 
 let seattle = {
   name: 'Seattle',
@@ -9,32 +9,39 @@ let seattle = {
   max: 65,
   avg: 6.3,
   dailyTotal: 0,
-  avgCookiesSoldHoulyArray: [],
+  avgCookiesSoldHoulyArray: [],//<-- push a value into the array
   getRandomCustomer: function(){ 
     //this is specifically for the customers
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);// <--- generating random customer.
+    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);// <--- generating random customer. "this" is to access the object.
   },
-  calcCookiesPerHour: function(){
-    for (let i = 0; i < hour.length; i++){
-      let customer = this.getRandomCustomer();
-      let cookiesSold = Math.floor(customer * this.avg);
-      this.avgCookiesSoldHoulyArray.push(cookiesSold);
+
+  calculateCookiesPerHour: function(){
+    for (let i = 0; i < hour.length; i++){ //<--- we need all three lines of code to run, which is why we want this first.
+      let randomCustomersThisHour = this.getRandomCustomer();
+      let cookiesSoldThisHour = Math.ceil(randomCustomersThisHour * this.avg);
+      this.dailyTotal = (this.dailyTotal + cookiesSoldThisHour); // or you could += this would add the two together
+      this.avgCookiesSoldHoulyArray.push(cookiesSoldThisHour);
     }
   },
-  fuction sum(totalCookies) {
-    let totalHourlyCookies = 1; //this is assigning multiple of any cookie index in the HOUR array.
-    for (let i = 0; i < hour.length; i++){
-    totalHourlyCookies =sum(hour[i], totalHourlyCookies)[0];// this is being multiplied and then reassigned
+  render: function(){
+    this.calculateCookiesPerHour();
+    //add the cookies sold each hour
+    //create list with cookies
+    console.log(this.avgCookiesSoldHoulyArray);
+    //create the element
+    for (let i = 0; i < hour.length; i++){ //<-- i is saying it cant be greater than 13. "i/index" is the postion in the array. i is being reassigned.
+      let listItem = document.createElement('li');
+      //add content
+      listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
+      //append element
+      seattleSales.appendChild(listItem);
     }
-    let display = `The total cookies sold are ${this.totalCookiesSold}.`;
-    return [totalHourlyCookies, display];
-  } // Couldnt figure out how to get total cookies for the whole day.
-
-
+    let total = document.createElement('li');
+    total.textContent = `Total ${this.dailyTotal}`;
+    seattleSales.appendChild(total)
+  },
 };
-console.log(seattle.getRandomCustomer());
-seattle.calcCookiesPerHour();
-console.log(seattle.avgCookiesSoldHoulyArray);
+      seattle.render();
 
     // let totalCookies = sum(sum(calcCookiesPerHour,hour)[0]);
     // hour.splice  ()
@@ -42,6 +49,21 @@ console.log(seattle.avgCookiesSoldHoulyArray);
   
     
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -63,58 +85,58 @@ console.log(seattle.avgCookiesSoldHoulyArray);
   //   asdasd = 
    
 
-let dubai = {
-  name: 'Dubai',
-  min: 11,
-  max: 38,
-  avg: 3.7,
-  dailyTotal: 0,
-  avgCookiesSoldHoulyArray: [],
-  getRandomCustomer: function(){
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  }
-};
-console.log(dubai.getRandomCustomer());
+// let dubai = {
+//   name: 'Dubai',
+//   min: 11,
+//   max: 38,
+//   avg: 3.7,
+//   dailyTotal: 0,
+//   avgCookiesSoldHoulyArray: [],
+//   getRandomCustomer: function(){
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+//   }
+// };
+// console.log(dubai.getRandomCustomer());
 
-let paris = {
-  name: 'Paris',
-  min: 20,
-  max: 38,
-  avg: 2.3,
-  dailyTotal: 0,
-  avgCookiesSoldHoulyArray: [],
-  getRandomCustomer: function(){
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  }
-};
-console.log(paris.getRandomCustomer());
-
-
-
-let lima = {
-  name: 'Lima',
-  min: 2,
-  max: 16,
-  avg: 4.6,
-  dailyTotal: 0,
-  avgCookiesSoldHoulyArray: [],
-  getRandomCustomer: function(){
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  }
-};
-console.log(paris.getRandomCustomer());
+// let paris = {
+//   name: 'Paris',
+//   min: 20,
+//   max: 38,
+//   avg: 2.3,
+//   dailyTotal: 0,
+//   avgCookiesSoldHoulyArray: [],
+//   getRandomCustomer: function(){
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+//   }
+// };
+// console.log(paris.getRandomCustomer());
 
 
 
-let tokyo = {
-  name: 'Tokyo',
-  min: 2,
-  max: 16,
-  avg: 4.6,
-  dailyTotal: 0,
-  avgCookiesSoldHoulyArray: [],
-  getRandomCustomer: function(){
-    return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
-  }
-};
-console.log(tokyo.getRandomCustomer());
+// let lima = {
+//   name: 'Lima',
+//   min: 2,
+//   max: 16,
+//   avg: 4.6,
+//   dailyTotal: 0,
+//   avgCookiesSoldHoulyArray: [],
+//   getRandomCustomer: function(){
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+//   }
+// };
+// console.log(paris.getRandomCustomer());
+
+
+
+// let tokyo = {
+//   name: 'Tokyo',
+//   min: 2,
+//   max: 16,
+//   avg: 4.6,
+//   dailyTotal: 0,
+//   avgCookiesSoldHoulyArray: [],
+//   getRandomCustomer: function(){
+//     return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);
+//   }
+// };
+// console.log(tokyo.getRandomCustomer());
