@@ -1,7 +1,7 @@
 'use strict'
 //0         1         2           3         4         5
 let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.']
-let citySales = document.getElementById('citySales');
+//let citySales = document.getElementById('citySales');
 
 let seattle = {
   name: 'Seattle',
@@ -26,6 +26,7 @@ let seattle = {
   },
   render: function () {
     this.calculateCookiesPerHour();
+    let cityList = document.getElementById('seattle')
     //add the cookies sold each hour
     //create list with cookies
     console.log(this.avgCookiesSoldHoulyArray);
@@ -35,11 +36,11 @@ let seattle = {
       //add content
       listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
       //append element
-      citySales.appendChild(listItem);
+      cityList.appendChild(listItem);
     }
     let total = document.createElement('li');
     total.textContent = `Total ${this.dailyTotal}`;
-    citySales.appendChild(total)
+    cityList.appendChild(total)
   },
 };
 seattle.render();
@@ -80,6 +81,7 @@ let dubai = {
 
   render: function () {
     this.calculateCookiesPerHour();
+    let cityList = document.getElementById('dubai')
     //add the cookies sold each hour
     //create list with cookies
     console.log(this.avgCookiesSoldHoulyArray);
@@ -89,11 +91,11 @@ let dubai = {
       //add content
       listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
       //append element
-      citySales.appendChild(listItem);
+      cityList.appendChild(listItem);
     }
     let total = document.createElement('li');
     total.textContent = `Total ${this.dailyTotal}`;
-    citySales.appendChild(total)
+    cityList.appendChild(total)
   },
 };
 dubai.render();
@@ -125,6 +127,7 @@ let paris = {
 
   render: function () {
     this.calculateCookiesPerHour();
+    let cityList = document.getElementById('paris')
     //add the cookies sold each hour
     //create list with cookies
     console.log(this.avgCookiesSoldHoulyArray);
@@ -134,11 +137,11 @@ let paris = {
       //add content
       listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
       //append element
-      citySales.appendChild(listItem);
+      cityList.appendChild(listItem);
     }
     let total = document.createElement('li');
     total.textContent = `Total ${this.dailyTotal}`;
-    citySales.appendChild(total)
+    cityList.appendChild(total)
   },
 };
 paris.render();
@@ -167,6 +170,7 @@ let lima = {
 
   render: function () {
     this.calculateCookiesPerHour();
+    let cityList = document.getElementById('lima')
     //add the cookies sold each hour
     //create list with cookies
     console.log(this.avgCookiesSoldHoulyArray);
@@ -176,11 +180,11 @@ let lima = {
       //add content
       listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
       //append element
-      citySales.appendChild(listItem);
+      cityList.appendChild(listItem);
     }
     let total = document.createElement('li');
     total.textContent = `Total ${this.dailyTotal}`;
-    citySales.appendChild(total)
+    cityList.appendChild(total)
   },
 };
 lima.render();
@@ -208,6 +212,7 @@ let tokyo = {
 
   render: function () {
     this.calculateCookiesPerHour();
+    let cityList = document.getElementById('tokyo')
     //add the cookies sold each hour
     //create list with cookies
     console.log(this.avgCookiesSoldHoulyArray);
@@ -217,11 +222,11 @@ let tokyo = {
       //add content
       listItem.textContent = `${hour[i]} ${this.avgCookiesSoldHoulyArray[i]}`;
       //append element
-      citySales.appendChild(listItem);
+      cityList.appendChild(listItem);
     }
     let total = document.createElement('li');
     total.textContent = `Total ${this.dailyTotal}`;
-    citySales.appendChild(total)
+    cityList.appendChild(total)
   },
 };
 tokyo.render();
