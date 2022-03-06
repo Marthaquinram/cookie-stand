@@ -2,12 +2,181 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sale</title>
+<title>Pat's Salmon Cookies:Sale</title> 
+
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand+SC&display=swap" rel="stylesheet">
+
+<style>
+  * {
+      box-sizing: border-box;
+  }
+
+  h1 {
+     font-family: 'Patrick Hand SC', cursive; 
+  }
+
+  table {
+      border-spacing: 0;
+      width: 300px;
+  }
+
+  table th {
+      font-family: 'Patrick Hand SC', cursive;
+  }
+
+  table td {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  table td, table th {
+      border: thin black solid;
+      padding: 3px 5px;
+  }
+
+  td:last-of-type {
+      text-align: right;
+  }
+</style>
 </head>
 <body>
-  <h1>Pat's Salmon Cookies: Sales Data</h1>
+  <h1>Sales Data</h1>
+  <table id="salesdata">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>6 a.m.</th>
+        <th>7 a.m.</th>
+        <th>8 a.m.</th>
+        <th>9 a.m.</th>
+        <th>10 a.m.</th>
+        <th>11 a.m.</th>
+        <th>12 a.m.</th>
+        <th>1 p.m.</th>
+        <th>2 p.m.</th>
+        <th>3 p.m.</th>
+        <th>4 p.m.</th>
+        <th>5 p.m.</th>
+        <th>6 p.m.</th>
+        <th>7 p.m.</th>
+        <th>Daily Location Totals</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Seattle</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Dubai</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Paris</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Lima</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Tokyo</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Totals</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+    </tbody>
+  <!-- <h1>Pat's Salmon Cookies: Sales Data</h1>
   <h2> Seattle Sales</h2>
   <ul id="seattle"></ul>
   <h2> Dubai Sales</h2>
@@ -17,7 +186,7 @@
   <h2> Lima Sales</h2>
   <ul id="lima"></ul>
   <h2> Tokyo Sales</h2>
-  <ul id="tokyo"></ul>
+  <ul id="tokyo"></ul> -->
 
 <script src="js/app.js"></script>
 
