@@ -1,23 +1,7 @@
-
-
-
-
- /* * {
+ * {
   box-sizing: border-box;
 
 }
-
-body {
-  width: 100%;
-  background-color: rgb(8, 128, 130);
-  background-attachment: fixed; */
-  /* margin: auto;
-  text-align: left;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}  */
-
-/* /* .nav li {
-  display: inline-block;
-  font-size: 20px;
-  padding: 20;
-} */
+header{
+  background-color: rgb(51, 144, 150);
+}

@@ -101,65 +101,7 @@ for(let i = 0; i < storeArray.length; i++){
 }
 makeFooter();
  
-
-  // new Store('Seattle', 23, 65, 6.3);
-  // new Store('Dubai', 11, 38, 3.7);
-  // new Store('Paris', 20, 38, 2.3);
-  // new Store('Lima', 2, 16, 4.6);
-  // new Store('Tokyo', 3, 24, 1.2);
- 
-
-//  for(let i = 0; i < storeArray.length; i++) {
-//   let newStore = storeArray[i];
- 
-//   Store.render();
-
- 
-  
-//  for(let i = 0; i < storeArray.length; i++) {
-//    let newStore = storeArray[i];
-
-
-
-
-
- 
- 
-
-
- 
-
- 
  // invoking the render method, in this case its for seattle.
-
-
-
-
-
-
-
-
- // function makeFooter(){
-//   let tableRow = document.createElement('tr');
-//   let tableHeader = document.createElement('th');
-//   tableHeader.textContent = 'Hourly Total';
-//   tableRow.appendChild(tableHeader);
-//   let grandTotal = 0;
-//   for (let i = 0; i < hour.length; i++){
-//     let hourlyTotal = 0;
-//     for (let j = 0; j < storeArray.length; i++){
-//       hourlyTotal += storeArray[j].cookiesSoldPerHour[i];
-//       grandTotal += storeArray[j].cookiesSoldPerHour[i];
-//     }
-//     tableHeader = document.createElement('th');
-//     tableHeader.textContent = hourlyTotal;
-//     tableRow.appendChild(tableHeader);
-//   }
-//   tableHeader = document.createElement('th');
-//   tableHeader.textContent = grandTotal;
-//   tableRow.appendChild(tableHeader);
-//   table.appendChild(tableRow);
-// }
 
 // let seattle = {
 //   name: 'Seattle',
