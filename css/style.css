@@ -4,7 +4,7 @@
 }
 header{
   background-color: rgb(159, 196, 235);
-   background-image: linear-gradient(teal, pink);
+   background-image: linear-gradient(teal, rgb(228, 132, 132));
   }
   
    /* html * { this allows me to see the box borders which help me target specific boxes.
@@ -12,8 +12,8 @@ header{
   }   */
   
   Body{
-    background-color: rgb(228, 154, 154);
-    background-image: linear-gradient(pink, teal);
+    background-color: rgb(228, 132, 132);
+    background-image: linear-gradient(rgb(228, 132, 132), teal);
 
   }
   nav {
@@ -25,6 +25,7 @@ header{
   nav img {
     margin-top: 20px;
     margin-bottom: 20px;
+
   }
   
   ul {
@@ -45,15 +46,19 @@ header{
     margin: 30px auto 0 auto;
     /*this means top right bottom left */
     display:flex;
-    flex-wrap: wrap;
+    /* flex-direction: row; */
+    flex-wrap: wrap;  
     justify-content: space-between;
     align-items: flex-start;
   }
-  
-  main img{
-    margin-bottom: 30px;
-    background-color: black;
-  }
+
+
+   #stores{
+    width: 800px;
+    
+   } 
+ 
+
   article{
     width: 450px;
     height: 400px;
@@ -78,7 +83,9 @@ header{
   }
   
   footer{
-    background-color: rgb(67, 65, 65);
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(240, 238, 238);
     height: 110px;
   }
   
