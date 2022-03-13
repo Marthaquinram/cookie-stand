@@ -1,6 +1,7 @@
 'use strict'
 let table = document.getElementById('table');
- let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.']
+// let newInputCityName = document.getElementById('new_input_city_name');
+let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.']
 //let citySales = document.getElementById('citySales');
 
 let storeArray = [];
@@ -14,7 +15,7 @@ function Store(name, min, max, avg) {
   this.avgCookiesSoldHoulyArray = [];
   storeArray.push(this)
 }
- 
+
 
 Store.prototype.getRandomCustomer = function () {
   return Math.floor(Math.random() * (this.max - this.min + 1) + this.min);// <--- generating random customer. "this" is to access the object.
@@ -29,30 +30,30 @@ Store.prototype.calculateCookiesPerHour = function () {
   }
 };
 
-Store.prototype.render = function(){
+Store.prototype.render = function () {
   this.calculateCookiesPerHour();
   let storeRow = document.createElement('tr');//<-- creating a row
   table.appendChild(storeRow);//<----this is passing the table to store row??
   let storeName = document.createElement('td'); //<-- this is creating a Table with data
   storeName.textContent = this.name;//<--inputting the names of the store in table
   storeRow.appendChild(storeName);//<--- this is displaying the city names on page
-  for(let i = 0; i < hour.length; i++){//<-- this is my for loop
+  for (let i = 0; i < hour.length; i++) {//<-- this is my for loop
     let hourlyCookiesSales = document.createElement('td');//<---naming this table data as hourlycookie sales to then input data.
     hourlyCookiesSales.textContent = this.avgCookiesSoldHoulyArray[i];//<--- this is actually inputting the data from the array
     storeRow.appendChild(hourlyCookiesSales);//<-- this is displaying the numbers in the rows
   }
- 
-let hourlyCookiesSalesTotal = document.createElement('td');//<--- naming this table data hourly cookiessales total 
-hourlyCookiesSalesTotal.textContent = this.dailyTotal;//<-- this is inputing the daily totals
-storeRow.appendChild(hourlyCookiesSalesTotal);//<--- this is displaying the totals for each city on the page in the table created.(boxes)
+
+  let hourlyCookiesSalesTotal = document.createElement('td');//<--- naming this table data hourly cookiessales total 
+  hourlyCookiesSalesTotal.textContent = this.dailyTotal;//<-- this is inputing the daily totals
+  storeRow.appendChild(hourlyCookiesSalesTotal);//<--- this is displaying the totals for each city on the page in the table created.(boxes)
 };
 
- function makeHeader(){
+function makeHeader() {
   let tableRow = document.createElement('tr');//<--- creating a Table Row
   let tableHeader = document.createElement('th');//<--- this is creating a table header
   tableHeader.textContent = 'location name';//<-- putting city name text in table header
   tableRow.appendChild(tableHeader);//<--- this is displaying the names
-  for (let i = 0; i < hour.length; i++){//<--- this for loop inputing the hours to the table header.
+  for (let i = 0; i < hour.length; i++) {//<--- this for loop inputing the hours to the table header.
     tableHeader = document.createElement('th');//<-- this is creting the header for hours
     tableHeader.textContent = hour[i];//<---- this is adding the hours text to the table
     tableRow.appendChild(tableHeader);//<--- this is displaying the hours on the table.
@@ -64,17 +65,17 @@ storeRow.appendChild(hourlyCookiesSalesTotal);//<--- this is displaying the tota
   table.appendChild(tableRow);//<--- this is displaying the row to the table displayed on browser.
 }
 
- function makeFooter(){
+function makeFooter() {
   let tableRow = document.createElement('tr');//<--- creating a new row
   let tableHeader = document.createElement('td');//<--- creating a table header
   tableHeader.textContent = 'hourly Total';//<-- this is adding 
   tableRow.appendChild(tableHeader);
   let grandTotal = 0;
-  for (let i = 0; i < hour.length; i++){
+  for (let i = 0; i < hour.length; i++) {
     let hourlyTotal = 0;
-    for (let j = 0; j < storeArray.length; j++){
-    hourlyTotal += storeArray[j].avgCookiesSoldHoulyArray[i];//<---cookies sold every hour at every location within in the store array equalling hourly total.
-    grandTotal += storeArray[j].avgCookiesSoldHoulyArray[i];
+    for (let j = 0; j < storeArray.length; j++) {
+      hourlyTotal += storeArray[j].avgCookiesSoldHoulyArray[i];//<---cookies sold every hour at every location within in the store array equalling hourly total.
+      grandTotal += storeArray[j].avgCookiesSoldHoulyArray[i];
     }
     let tableHour = document.createElement('td')
     tableHour.textContent = hourlyTotal;//<--- this is adding text to the hourly total
@@ -86,21 +87,75 @@ storeRow.appendChild(hourlyCookiesSalesTotal);//<--- this is displaying the tota
   table.appendChild(tableRow);
 }
 
-new Store('Seattle',23,65,6.3);
-new Store('Tokyo',3,24,1.2);
-new Store('Dubai',11,38,3.7);
-new Store('Paris',23,65,6.3);
-new Store('Lima',2,16,4.6);
+
+new Store('Seattle', 23, 65, 6.3);
+new Store('Tokyo', 3, 24, 1.2);
+new Store('Dubai', 11, 38, 3.7);
+new Store('Paris', 23, 65, 6.3);
+new Store('Lima', 2, 16, 4.6);
 
 
+
+
+function renderStores() {
+  for (let i = 0; i < storeArray.length; i++) {
+    storeArray[i].render();
+  }
+};
+
+function handleForm(event) {
+  event.preventDefault();
+  console.log('Im in the handle form');
+  let newLocation = event.target.location.value;
+  let newMin = parseInt(event.target.min.value);
+  let newMax = parseInt(event.target.max.value);
+  let newAvg = parseInt(event.target.avg.value);
+  console.log(newLocation);
+  let newStore = new Store(newLocation, newMin, newMax, newAvg);
+  storeArray.push(newStore);
+
+  //  console.log(newStore);
+  // makeFooter();
+}
+
+let cityForm = document.getElementById('city_form');
+cityForm.addEventListener('submit', handleForm);
 
 makeHeader();
-for(let i = 0; i < storeArray.length; i++){
-  storeArray[i].render();
-  
-}
+renderStores();
 makeFooter();
- 
+
+
+
+
+// let addButton = document.getElementById('add_button');
+
+// //addButton.addEventListener('click', function (event) {
+// //   event.preventDefault();
+
+
+//  if(cityInputNewName.value == '') {
+//         return;
+//  }
+//  let city = new City(
+//  cityInputNewName.value,
+//   );
+//   //  console.log("Adding new city", city);
+// cityInputNewName.value = '';
+
+//   city.render();
+
+// });
+
+
+
+
+
+
+
+
+
+
  // invoking the render method, in this case its for seattle.
 
 // let seattle = {
@@ -330,4 +385,3 @@ makeFooter();
 // };
 // tokyo.render();
 // console.log(tokyo.getRandomCustomer());
- 
