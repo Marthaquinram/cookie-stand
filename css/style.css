@@ -89,3 +89,10 @@ header{
     height: 110px;
   }
   
+  
+
+  label{
+    display:block;
+    margin: 2px 0 4px 0;
+
+  }
