@@ -7,6 +7,7 @@ header{
    background-image: linear-gradient(teal, rgb(228, 132, 132));
   }
   
+
    /* html * { this allows me to see the box borders which help me target specific boxes.
     border: solid black 1px;
   }   */
@@ -95,4 +96,42 @@ header{
     display:block;
     margin: 2px 0 4px 0;
 
+  }
+  fieldset {
+    color: rgb(225, 183, 244);
+    text-decoration: underline;
+  }
+  #shadowBox {
+    background-color: rgb(255, 250, 250);
+    /* Fallback color */
+    background-color: rgb(1, 135, 135);
+    /* Black w/opacity/see-through */
+    border: 3px solid;
+  }
+  
+  .rainbow {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 32px;
+    font-family: monospace;
+    letter-spacing: 5px;
+    animation: colorRotate .5s linear 0s infinite;
+  }
+  
+  @keyframes colorRotate {
+    from {
+      color: #6666ff;
+    }
+    10% {
+      color: #0099ff;
+    }
+    50% {
+      color: #00ff00;
+    }
+    75% {
+      color: #ff3399;
+    }
+    100% {
+      color: #6666ff;
+    }
   }

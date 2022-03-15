@@ -52,16 +52,29 @@
         <li><a href="sales.html">Merch</a></li>
       </ul>
      </nav>
-    <h1>Sales Data</h1>
-    <table id="table"> </table>
+    
+     <div id="shadowBox">
+
+      <h1 class="rainbow">Sales Data</h3>
+    
+    </div>
+    <table> 
+      <thead id="head"> </thead>
+      <tbody id="table"></tbody>
+      <tfoot id="foot"></tfoot>
+    </table>
+
     </header>
 
   <main>
+ 
   <form id="city_form">
+    <fieldset>
     <label for="location">
     New Store Location
     <input id="location"/>
   </label>
+  
   <label for="min">
     Minimum Customer
     <input id="min"/>
@@ -70,13 +83,14 @@
     Maximum Customer
     <input id="max"/>
   </label>
+
   <label for="avg">
    Average
     <input id="avg"/>
   </label>
 
 <button id="add_button" type="submit">Add City</button>
-    
+</fieldset>
   </forms>
 
   </main>
