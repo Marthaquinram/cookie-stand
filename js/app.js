@@ -1,5 +1,7 @@
 'use strict'
 let table = document.getElementById('table');
+let head = document.getElementById('head');
+let foot = document.getElementById('foot');
 // let newInputCityName = document.getElementById('new_input_city_name');
 let hour = ['6 a.m.', '7 a.m.', '8 a.m.', '9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.']
 //let citySales = document.getElementById('citySales');
@@ -60,9 +62,9 @@ function makeHeader() {
   }
 
   tableHeader = document.createElement('th'); //<-- creating the totals header/label
-  tableHeader.textContent = 'total';//<-- nameing it total in
+  tableHeader.textContent = 'total';//<-- naming it total in
   tableRow.appendChild(tableHeader);//<--- this is displaying total on table header on the table row
-  table.appendChild(tableRow);//<--- this is displaying the row to the table displayed on browser.
+  head.appendChild(tableRow);//<--- this is displaying the row to the table displayed on browser.
 }
 
 function makeFooter() {
@@ -84,7 +86,7 @@ function makeFooter() {
   let tableTotal = document.createElement('td');
   tableTotal.textContent = grandTotal;
   tableRow.appendChild(tableTotal);
-  table.appendChild(tableRow);
+  foot.appendChild(tableRow);
 }
 
 
@@ -103,6 +105,14 @@ function renderStores() {
   }
 };
 
+function footerReset() {
+  while (foot.firstChild) { //<-- when while is running, it ask foot do you have stuff? totals. as long as its true then itll keep looping while my footer has children remove the children. 
+    foot.removeChild(foot.firstChild);
+  }
+  makeFooter();
+}
+
+
 function handleForm(event) {
   event.preventDefault();
   console.log('Im in the handle form');
@@ -111,19 +121,20 @@ function handleForm(event) {
   let newMax = parseInt(event.target.max.value);
   let newAvg = parseInt(event.target.avg.value);
   console.log(newLocation);
-  let newStore = new Store(newLocation, newMin, newMax, newAvg);
+  let newStore = new Store(newLocation, newMin, newMax, newAvg); //<---- new Store is a a new instance
   storeArray.push(newStore);
-
+  newStore.render();
+  footerReset();
   //  console.log(newStore);
   // makeFooter();
 }
-
 let cityForm = document.getElementById('city_form');
 cityForm.addEventListener('submit', handleForm);
 
 makeHeader();
 renderStores();
 makeFooter();
+
 
 
 

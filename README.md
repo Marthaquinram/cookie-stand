@@ -1,17 +1,17 @@
-# LAB - 06
+# LAB - 09
 
 
 ## Pat's Salmon Cookies
 
 I build an app with a direct and powerful purpose. It does all of the things that it accomplishes well. I should describe the purpose and functionality so those that visit my README understand the app
 
-### Author: Martha/ Natalija, Sarah
+### Author: Martha/ Natalija, Sarah, Zayah
 
 
 
 ### Links and Resources
 - submission PR
-- Any Links you used as reference
+- Got the animation from Stackoverflow  (https://stackoverflow.com/questions/54702124/rainbow-text-animation-using-only-css)
 
 
 ### Reflections and Comments
