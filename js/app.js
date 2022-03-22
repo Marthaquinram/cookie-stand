@@ -377,7 +377,7 @@ makeFooter();
 
 //   render: function () {
 //     this.calculateCookiesPerHour();
-//     let cityList = document.getElementById('tokyo')
+//  let cityList = document.getElementById('tokyo')
 //     //add the cookies sold each hour
 //     //create list with cookies
 //     console.log(this.avgCookiesSoldHoulyArray);
